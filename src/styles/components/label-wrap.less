@@ -1,0 +1,87 @@
+@label-wrap-prefix-cls: ~"@{css-prefix}label-wrap";
+@label-wrap-group-prefix-cls: ~"@{css-prefix}label-wrap-group";
+
+.@{label-wrap-group-prefix-cls} {
+  display: flex;
+  flex-wrap: wrap;
+  .@{label-wrap-prefix-cls}{
+    flex-basis: var(--basis)
+  }
+  &--left {
+    .@{label-wrap-prefix-cls} {
+      &__label {
+        text-align: left;
+      }
+    }
+  }
+  &--right {
+    .@{label-wrap-prefix-cls} {
+      &__label {
+        text-align: right;
+      }
+    }
+  }
+  &--top {
+    .@{label-wrap-prefix-cls} {
+      display: block;
+    }
+  }
+}
+.@{label-wrap-prefix-cls} {
+  display: flex;
+  font-size: 14px;
+  line-height: 28px;
+  &--overflow{
+    display: flex;
+    overflow: hidden;
+    .elp-label-wrap__content {
+      flex: 1;
+      display: flex;
+      overflow: hidden;
+      .text-area {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+      .placeholder {
+        flex: 1;
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          width: 0;
+          height: 0;
+          padding: 10000%;
+          right: 0;
+          z-index: 9;
+        }
+      }
+    }
+  }
+  &__label {
+    flex-shrink: 0;
+    width: var(--width);
+    color: @color-text-secondary;
+    &[required]::before {
+      content: "*";
+      color: #f56c6c;
+      margin-right: 4px;
+    }
+    .icon-custom {
+      color: @color-text-secondary;
+      margin-right:5px;
+    }
+  }
+  &__content {
+    color: @color-text-regular;
+    word-break: break-all;
+    a {
+      color: @color-theme;
+      text-decoration: none;
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

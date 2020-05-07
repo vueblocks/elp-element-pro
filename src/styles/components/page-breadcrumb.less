@@ -1,0 +1,31 @@
+@page-breadcrumb-prefix-cls: ~"@{css-prefix}page-breadcrumb";
+
+.@{page-breadcrumb-prefix-cls} {
+  margin-bottom: 10px;
+  .title {
+    margin-bottom: 10px;
+    line-height: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    color: @color-text-regular;
+  }
+  .breadcrumb {
+    .el-breadcrumb__inner {
+      display: inline-block;
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: normal;
+      color: #00000F;
+    }
+    .is-link {
+      color:@color-info;
+      &:hover {
+        color: @color-theme;
+        font-weight: 600;
+      }
+    }
+    .el-breadcrumb__separator {
+      margin: 0;
+    }
+  }
+}

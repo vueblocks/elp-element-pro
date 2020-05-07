@@ -1,0 +1,35 @@
+@text-ellipse-prefix-cls: ~"@{css-prefix}text-ellipse";
+
+.@{text-ellipse-prefix-cls} {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  &::after {
+    counter-reset: var(--width) var(--coverColor);
+    content: '';
+    width: calc(var(--width));
+    display: inline-block;
+    position: absolute;
+    z-index: 2;
+    height: 100%;
+    background-color: var(--coverColor);
+  }
+  .wrap--more {
+    position: absolute;
+    cursor: pointer;
+    z-index: 1;
+    bottom: 0;
+    right: 0;
+    box-sizing: border-box;
+    display: flex;
+    .txt{
+      background-color: var(--coverColor);
+      padding-right:10px;
+    }
+    .symbol {
+      padding-left: 3px;
+      padding-right: 6px;
+      background: var(--coverColor);
+    }
+  }
+}

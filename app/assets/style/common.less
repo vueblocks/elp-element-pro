@@ -1,0 +1,63 @@
+@import "../../../node_modules/normalize.css/normalize.css";
+
+html, body {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  font-weight: normal;
+  font-size: 18px;
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  background-color: #EFF1F4;
+  -webkit-font-smoothing: antialiased;
+  :focus {
+    outline: none !important;
+  }
+}
+
+/* clearDefaultCss
+-------------------------- */
+
+ol,ul {
+  list-style:none;
+}
+ul, ol, li, h1, h2, h3, h4, h5, h6, p {
+  margin: 0px;
+  padding: 0px;
+  font-weight: normal;
+}
+
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  color: #00C4FF;
+}
+
+p {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+/* Scrollbar
+-------------------------- */
+*::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: rgba(179, 187, 195, 0.50);
+  border-radius: 5px;
+}
+
+.scrollbarHide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbarShow::-webkit-scrollbar {
+  display: block;
+}

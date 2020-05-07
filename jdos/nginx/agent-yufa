@@ -1,0 +1,16 @@
+server {
+        listen                   80 default_server;
+        server_name              _;
+        index                    index.html index.htm;
+        access_log               /export/Logs/nginx_access.log;
+        error_log                /export/Logs/nginx_error.log;
+
+        root /export/App/resource/;
+
+        location ~ \.html$ {
+            add_header cache-control "no-store";
+        }
+        location ~ .*\.(js|css|ttf|svg|ico){
+            add_header    Cache-Control  max-age=86400;
+        }
+}

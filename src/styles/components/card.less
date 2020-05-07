@@ -1,0 +1,29 @@
+@card-prefix-cls: ~"@{css-prefix}card";
+
+.@{card-prefix-cls} {
+  background: #fff;
+  &__head {
+    padding: 16px 20px;
+    border-bottom: 1px solid @color-border;
+    display: flex;
+    justify-content: space-between;
+    &__title {
+      font-size: 16px;
+      color: @color-text-regular;
+      font-weight: 600;
+      margin-right: 10px;
+    }
+    &__sub {
+      font-size: 12px;
+      color: @color-text-secondary;
+    }
+  }
+  &__main {
+    padding: 20px 30px;
+    color: @color-text-regular;
+    font-size: 14px;
+    &--symmetry {
+      padding: 30px;
+    }
+  }
+}

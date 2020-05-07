@@ -1,0 +1,94 @@
+@cascader-panel-prefix-cls: ~"@{css-prefix}cascader-panel";
+
+.@{cascader-panel-prefix-cls} {
+  display: flex;
+  height: 250px;
+  &__left {
+    overflow-y: auto;
+    ul {
+      margin: 0;
+      padding: 15px 0;
+      width: 240px;
+      height: available;
+      height: -webkit-fill-available;
+      list-style-type: none;
+      .first-item {
+        height: 40px;
+        line-height: 40px;
+        padding-left: 66px;
+        font-size: 14px;
+        color: @color-text-regular;
+        cursor: pointer;
+        &:hover {
+          background-color: @color-panel-bg-secondary;
+        }
+        &--active {
+          color: @color-theme;
+          font-weight: 500;
+          background-color: @color-panel-bg-secondary;
+        }
+        i {
+          float: right;
+          margin-right: 17px;
+          font-size: 14px;
+          line-height: 40px;
+        }
+      }
+    }
+  }
+  &__right {
+    flex: 1;
+    overflow-y: auto;
+    ul {
+      padding: 15px 40px 15px 10px;
+      font-size: 14px;
+      list-style-type: none;
+      li {
+        display: flex;
+        .second-item {
+          flex: none;
+          margin-right: 30px;
+          width: 110px;
+          min-height: 40px;
+          text-align: right;
+          color: @color-text-secondary;
+          &--select {
+            cursor: pointer;
+            &:hover {
+              font-size: 14px;
+              color: @color-theme;
+            }
+          }
+          &--active {
+            font-size: 14px;
+            color: @color-theme;
+          }
+        }
+        .container {
+          display: flex;
+          flex-wrap: wrap;
+          .third-item {
+            height: 20px;
+            line-height: 20px;
+            margin-right: 10px;
+            margin-bottom:10px;
+            padding: 2px 8px;
+            font-size: 14px;
+            color: @color-text-regular;
+            cursor: pointer;
+            &:hover {
+              color: #fff;
+              background: @color-theme;
+              border-radius: 2px;
+            }
+            &--active {
+              color: #fff;
+              background: @color-theme;
+              border-radius: 2px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

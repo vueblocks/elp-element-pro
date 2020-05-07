@@ -1,0 +1,25 @@
+@datepicker-group-prefix-cls: ~"@{css-prefix}datepicker-group";
+
+.elp-datepicker-group {
+  display: inline-block;
+  position: relative;
+  margin-left: 10px;
+  .datepicker-group-datepicker {
+    width: 220px;
+    z-index: 11;
+    margin-left: -5px;
+    .el-input__inner {
+      border-radius: 0 4px 4px 0;
+    }
+  }
+  .datepicker-group-select {
+    margin-left: -4px;
+    width: 120px;
+    z-index: 10;
+    .el-input__inner {
+      border-right: 0;
+      border-radius: 4px 0 0 4px;
+      margin-left: -1px;
+    }
+  }
+}
