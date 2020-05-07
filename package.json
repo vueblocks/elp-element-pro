@@ -1,7 +1,7 @@
 {
   "name": "element-ui-pro",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "main": "lib/element-ui-pro.umd.min.js",
   "scripts": {
     "start": "vue-cli-service serve",
