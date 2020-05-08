@@ -1,20 +1,28 @@
 {
-  "name": "element-ui-pro",
+  "name": "@vueblocks/elp-element-pro",
   "version": "0.1.0",
-  "private": true,
-  "main": "lib/element-ui-pro.umd.min.js",
+  "main": "lib/elp-element-pro.umd.min.js",
   "scripts": {
-    "start": "vue-cli-service serve",
-    "lint": "vue-cli-service lint",
-    "build:lib": "vue-cli-service build --target lib --name element-ui-pro --dest lib src/index.js",
-    "build:icon": "vue-cli-service build --target lib --name element-ui-pro-icon --dest icon-lib src/icon.js",
-    "build:style": "lessc ./src/styles/index.less ./lib/styles/element-ui-pro.css --clean-css",
+    "build:lib": "vue-cli-service build --target lib --name elp-element-pro --dest lib src/index.js",
+    "build:icon": "vue-cli-service build --target lib --name elp-element-pro-icon --dest icon-lib src/icon.js",
+    "build:style": "lessc ./src/styles/index.less ./lib/styles/elp-element-pro.css --clean-css",
     "build": "npm run build:lib && npm run build:style && node svgo.js && npm run build:icon",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "inspect": "vue inspect > vue-inspect.js",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
+  "homepage": "https://github.com/vueblocks/elp-element-pro",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vueblocks/elp-element-pro"
+  },
+  "keywords": [
+    "Vue",
+    "Element",
+    "front-end"
+  ],
+  "license": "MIT",
   "dependencies": {
     "axios": "^0.19.0",
     "core-js": "^3.3.2",
