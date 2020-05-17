@@ -5,6 +5,7 @@ const resolve = (dir) => path.join(__dirname, dir)
 module.exports = {
   title: 'Element Ui Pro',
   port: 4000,
+  base: '/elp-element-pro/',
   dest: './dist',
   themeConfig: {
     nav: [

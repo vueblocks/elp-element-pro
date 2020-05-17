@@ -10,7 +10,7 @@ sidebarDepth: 0
 
 首先在项目中先建一个目录，比如 my-theme，然后在 my-theme 下建立一个 less 文件 index.less，并写入下面内容：
 ```
-@import '~element-ui-pro/src/styles/index.less';
+@import '~@vueblocks/elp-element-pro/src/styles/index.less';
 
 // Here are the variables to cover, such as:
 @color-theme: #8c0776;

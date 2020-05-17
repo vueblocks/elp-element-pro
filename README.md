@@ -1,37 +1,10 @@
-# vueblock-ele-ui
+# elp-element-pro
 
-
-## 文档
-
-文档采用 vuepress 书写，需
+## Installation
 
 ```
-npm install -g vuepress
-```
-### 启动文档服务
-```
-npm run docs:dev
-```
-### 打包文档
-```
-npm run docs:build
+npm i @vueblocks/elp-element-pro
 ```
 
-## lib库打包
-```
-npm run build
-```
-
-## 项目结构
-|-- VUEBLOCK-ELE-UI
-    |--app
-    |--dist (打包文档)
-    |--lib (组件库打包地址)
-    |-- docs (vuepress文档)
-    |   |-- .vuepress
-    |   |   | -- components(组件示例)
-    |   |-- component (组件文档)
-    |   |-- guide(设计规范文档)
-    |-- src (项目库)
-        |-- styles (样式/主题)
-        |-- packages(组件)
+## Document
+https://vueblocks.github.io/elp-element-pro/
