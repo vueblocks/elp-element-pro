@@ -42,7 +42,7 @@
       <!-- 暂无数据样式 -->
       <section slot="empty" class="noDataShow">
         <section class="wrap">
-          <img :src="require('./table-empty.png')" class="imgPanel">
+          <img v-if="imgSrc" :src="imgSrc" class="imgPanel">
           <div class="tipTxt" v-html="emptyTxt"></div>
         </section>
       </section>
@@ -117,6 +117,10 @@ export default {
     },
     formatData () {
       return this.inlineEdit ? this.recursiveTree(this.data) : this.data
+    },
+    imgSrc () {
+      const globalParams = this.$eleUiProGlobal['elpTable'] || {}
+      return globalParams.imgSrc || ''
     }
   },
   methods: {

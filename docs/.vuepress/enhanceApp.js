@@ -16,6 +16,9 @@ export default ({ Vue }) => {
         label: 'label',
         value: 'value'
       }
+    },
+    elpTable: {
+      imgSrc: require('./assets/table-empty.png')
     }
   })
   Vue.use(ElementUI)
