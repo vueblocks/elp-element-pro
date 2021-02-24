@@ -13,6 +13,7 @@ export default {
     return {
       detailList: [
         { label: '字段类型：', content: '枚举型' },
+        { label: '超长折叠：', content: '长文本'.repeat(25), attrs: { maxHeight: '27px' } },
         {
           label: '负责人：',
           content: '刘凯(liukai154)',

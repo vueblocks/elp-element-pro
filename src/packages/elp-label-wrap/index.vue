@@ -10,7 +10,10 @@
       <el-tooltip :disabled="!overflow" :content="hideContent">
         <div class="text-area">
           <span v-if="num !== undefined">{{locale(num)}}</span>
-          <slot></slot>
+          <elp-text-ellipse v-if="maxHeight" :maxHeight="maxHeight">
+            <slot></slot>
+          </elp-text-ellipse>
+          <slot v-else></slot>
           <a :href="link.url" target="_blank" v-if="link.url">{{link.content}}</a>
           <elp-dongdong v-if="erp" :erp="erp"/>
         </div>
@@ -52,6 +55,9 @@ export default {
     hideContent: {
       type: String,
       default: ''
+    },
+    maxHeight: {
+      type: String
     }
   },
   computed: {
