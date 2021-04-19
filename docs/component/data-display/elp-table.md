@@ -26,6 +26,21 @@ sidebarDepth: 0
 <<< @/docs/.vuepress/components/data-display/elp-table/expand.vue
 </code-card>
 
+#### 插件 - 操作栏拓展
+
+**list**  若需要函数计算可传入函数，也可直接传入数组
+
+<code-card compName="docs-table-operate">
+<<< @/docs/.vuepress/components/data-display/elp-table/operate.vue
+</code-card>
+
+也可直接定义为图标,事件可直接通过传参输入
+
+<code-card compName="docs-table-icon">
+<<< @/docs/.vuepress/components/data-display/elp-table/icon.vue
+</code-card>
+
+
 #### Attributes
 参数|说明|类型|可选值|默认值|
 :--|:--|:--|:--|:--|:--
@@ -38,6 +53,7 @@ cell-class-name|表格cell类名|string|表格样式基于table-cell书写
 inline-edit|开启行内编辑|boolean|-|false
 size|表格大小|string|medium,small,mini|small
 border|是否有边框|boolean|-|false
+
 
 #### columns
 参数|说明|类型|可选值|默认值|
@@ -54,7 +70,21 @@ align|对齐方式|string|left/center/right
 edit|行内编辑|boolean|-|false|
 format|自定义表格内容|Function(row)|
 resizable|是否可拖拽|boolean|-|true
+plugin| 可自定义使用的插件，现在已默认安装几种插件|obj
 
+### plugin 说明
+参数|说明|类型|可选值|默认值
+:--|:--|:--|:--|:--|:--
+type|插件类型|string| operate
+attrs| 插件属性 | object
+
+### operate 插件 attrs
+参数|说明|类型|可选值|默认值
+:--|:--|:--|:--|:--|:--
+label|操作栏名称|string|
+icon | 操作栏图标
+hide| 隐藏 | boolean / function
+eventName| 触发点击时 emit出的函数名称
 
 #### page
 参数|说明|类型|可选值|默认值
@@ -70,6 +100,9 @@ pageCount|页码按钮的数量，当总页数超过该值时会折叠|numer|大
 事件名称|说明|回调参数
 :--|:--|:--
 sizeChange|pageSize 改变时会触发|每页条数
+handleEvent| 插件触发事件的输出
+
+
 
 ### ref
 名称|说明|

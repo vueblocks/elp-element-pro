@@ -16,6 +16,7 @@
     >
       <template v-for="(column, index) in columns">
         <slot v-if="column.slot" :name="column.slot"></slot>
+        <extend v-else-if="column.plugin" :column="column" :key="index"  v-on="$listeners" />
         <el-table-column
           v-else-if="!column.hidden"
           :key="index"
@@ -68,9 +69,13 @@
 <script>
 
 import omit from 'lodash.omit'
+import Extend from './extend'
 
 export default {
   name: 'elp-table',
+  components: {
+    Extend
+  },
   props: {
     data: {
       type: Array,
