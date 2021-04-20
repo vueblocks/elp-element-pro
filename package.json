@@ -1,6 +1,6 @@
 {
   "name": "@vueblocks/elp-element-pro",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "main": "lib/elp-element-pro.umd.min.js",
   "scripts": {
     "build:lib": "vue-cli-service build --target lib --name elp-element-pro --dest lib src/index.js",
