@@ -9,19 +9,33 @@
       :show-overflow-tooltip="column.tooltip"
       :align="column.align"
     >
+      <template v-if="column.thTooltip" slot="header">
+        <span class="th-tooltip">{{ column.label }}</span>
+        <el-tooltip :content="column.thTooltip">
+          <i class="el-icon-warning"></i>
+        </el-tooltip>
+      </template>
       <template slot-scope="scope">
         <component
           v-bind="decorationAttr(scope.row)"
+          v-on="$listeners"
           :is="compName"
-          @handleEvent="onHandleEvent(scope.row, $event)"
-          @eventHandle="onEventHandle(scope.row, $event)"
+          :row="scope.row"
         />
       </template>
     </el-table-column>
 </template>
 
 <script>
+
+import ElpTableOperate from './plugins/elp-table-operate'
+import ElpTableSwitch from './plugins/elp-table-switch'
+
 export default {
+  components: {
+    ElpTableOperate,
+    ElpTableSwitch
+  },
   props: {
     column: {
       type: Object,
@@ -30,7 +44,7 @@ export default {
   },
   computed: {
     compName () {
-      const alias = ['operate']
+      const alias = ['operate', 'switch']
       const { type } = this.column.plugin || {}
       if (alias.includes(type)) return `elp-table-${type}`
     }
@@ -44,12 +58,6 @@ export default {
         _bind[key] = typeof _attrVal === 'function' ? _attrVal(row) : _attrVal
       }
       return _bind
-    },
-    onHandleEvent (row, eventName) {
-      this.$emit('handleEvent', { row, eventName })
-    },
-    onEventHandle (row, event) {
-      if (typeof event === 'function') event(row)
     }
   }
 }

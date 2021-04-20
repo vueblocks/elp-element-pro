@@ -29,6 +29,12 @@
           :show-overflow-tooltip="column.tooltip"
           :align="column.align"
         >
+          <template v-if="column.thTooltip" slot="header">
+            <span class="th-tooltip">{{ column.label }}</span>
+            <el-tooltip :content="column.thTooltip">
+              <i class="el-icon-warning"></i>
+            </el-tooltip>
+          </template>
           <template slot-scope="scope">
             <template v-if="inlineEdit && column.edit && scope.row._edit ">
               <el-input class="edit-input" size="mini" v-model="scope.row[column.prop]"></el-input>

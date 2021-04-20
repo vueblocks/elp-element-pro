@@ -45,6 +45,10 @@ export default {
     maxLen: {
       type: Number,
       default () { return 2 }
+    },
+    row: {
+      type: Object,
+      default () { return {} }
     }
   },
   computed: {
@@ -70,8 +74,8 @@ export default {
   },
   methods: {
     handleClick (item) {
-      if (item.event) { this.$emit('eventHandle', item.event) }
-      if (item.eventName) this.$emit('handleEvent', item.eventName)
+      if (item.event) { if (typeof item.event === 'function') item.event(this.row) }
+      if (item.eventName) this.$emit('operateClick', { row: this.row, eventName: item.eventName })
     }
   }
 }

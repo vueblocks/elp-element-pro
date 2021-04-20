@@ -10,7 +10,6 @@ import ElpDatepickerGroup from './packages/elp-datepicker-group'
 import ElpCard from './packages/elp-card'
 import ElpLabelWrap from './packages/elp-label-wrap'
 import ElpLabelWrapGroup from './packages/elp-label-wrap/group.vue'
-import ElpTableOperate from './packages/elp-table/plugins/elp-table-operate.vue'
 
 const components = [
   ElpDongdong,
@@ -24,8 +23,7 @@ const components = [
   ElpDatepickerGroup,
   ElpCard,
   ElpLabelWrap,
-  ElpLabelWrapGroup,
-  ElpTableOperate
+  ElpLabelWrapGroup
 ]
 
 function install (Vue, opts = {}) {

@@ -7,7 +7,7 @@
     :columns="columns"
     class="elp-table--edit"
     ref="vTable"
-    @handleEvent="handleEvent"
+    @operateClick="handleEvent"
   />
 </template>
 

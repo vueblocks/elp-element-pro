@@ -19,6 +19,12 @@ sidebarDepth: 0
 <<< @/docs/.vuepress/components/data-display/elp-table/edit.vue
 </code-card>
 
+#### 表头tooltip
+
+<code-card compName="docs-table-tooltip">
+<<< @/docs/.vuepress/components/data-display/elp-table/tooltip.vue
+</code-card>
+
 #### 属性拓展
 除了下面定义的属性方法, 还支持el-table 的所有属性和方法,下面以单选为例
 
@@ -38,6 +44,12 @@ sidebarDepth: 0
 
 <code-card compName="docs-table-icon">
 <<< @/docs/.vuepress/components/data-display/elp-table/icon.vue
+</code-card>
+
+#### 插件 - 启用/禁用
+
+<code-card compName="docs-table-switch">
+<<< @/docs/.vuepress/components/data-display/elp-table/switch.vue
 </code-card>
 
 
@@ -75,7 +87,7 @@ plugin| 可自定义使用的插件，现在已默认安装几种插件|obj
 ### plugin 说明
 参数|说明|类型|可选值|默认值
 :--|:--|:--|:--|:--|:--
-type|插件类型|string| operate
+type|插件类型|string| operate, switch
 attrs| 插件属性 | object
 
 ### operate 插件 attrs
@@ -83,8 +95,15 @@ attrs| 插件属性 | object
 :--|:--|:--|:--|:--|:--
 label|操作栏名称|string|
 icon | 操作栏图标
+maxLen| 最多展示的标签数 |number||2
 hide| 隐藏 | boolean / function
 eventName| 触发点击时 emit出的函数名称
+
+### switch 插件 attrs
+参数|说明|类型|可选值|默认值
+:--|:--|:--|:--|:--|:--
+enable|是否启用组件|boolean,function|
+
 
 #### page
 参数|说明|类型|可选值|默认值
@@ -100,7 +119,8 @@ pageCount|页码按钮的数量，当总页数超过该值时会折叠|numer|大
 事件名称|说明|回调参数
 :--|:--|:--
 sizeChange|pageSize 改变时会触发|每页条数
-handleEvent| 插件触发事件的输出
+operateClick| operate插件点击触发 | eventName, row
+switchChange| switch插件切换触发 | value,row
 
 
 
