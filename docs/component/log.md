@@ -4,6 +4,9 @@ sidebarDepth: 0
 ---
 
 ## v0.1.3
+修复
++ elp-table 拓展列 hidden 隐藏失效
+## v0.1.3
 增加
 + elp-table 增加 operate,switch 插件，增加 thTooltip 属性
 ## v0.1.2
