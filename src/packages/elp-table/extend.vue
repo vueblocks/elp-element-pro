@@ -1,5 +1,6 @@
 <template>
     <el-table-column
+      v-if="!column.hidden"
       :prop="column.prop"
       :label="column.label"
       :width="column.width"

@@ -32,7 +32,7 @@
           <template v-if="column.thTooltip" slot="header">
             <span class="th-tooltip">{{ column.label }}</span>
             <el-tooltip :content="column.thTooltip">
-              <i class="el-icon-warning"></i>
+              <i class="el-icon-question"></i>
             </el-tooltip>
           </template>
           <template slot-scope="scope">

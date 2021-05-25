@@ -25,6 +25,12 @@ sidebarDepth: 0
 <<< @/docs/.vuepress/components/data-display/elp-table/tooltip.vue
 </code-card>
 
+#### 列排序
+
+<code-card compName="docs-table-sortable">
+<<< @/docs/.vuepress/components/data-display/elp-table/sortable.vue
+</code-card>
+
 #### 属性拓展
 除了下面定义的属性方法, 还支持el-table 的所有属性和方法,下面以单选为例
 
@@ -76,7 +82,7 @@ label|显示标题|string
 width|列宽度|string
 minWidth| 列最小宽度 | string
 fixed|列是否固定在左侧或者右侧，true 表示固定在左侧|string,boolean|true, left, right
-sortable|对应列是否可以排序，如果设置为 'custom'，则代表用户希望远程排序，需要监听 Table 的 sort-change 事件|boolean,string|true,false,'custom'
+sortable|对应列是否可以排序，如果设置为 'custom'，则代表用户希望远程排序，需要监听 Table 的 sort-change 事件|boolean,string|true,false,'custom'|false
 tooltip|当内容过长被隐藏时显示 tooltip|boolean
 align|对齐方式|string|left/center/right
 edit|行内编辑|boolean|-|false|

@@ -24,6 +24,7 @@
   ],
   "license": "MIT",
   "dependencies": {
+    "async-validator": "^1.11.5",
     "axios": "^0.19.2"
   },
   "peerDependencies": {
