@@ -1234,7 +1234,14 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
   } else {}
 }(typeof self !== 'undefined' ? self : this, function () {
   function getCurrentScript () {
-    if (document.currentScript) {
+    var descriptor = Object.getOwnPropertyDescriptor(document, 'currentScript')
+    // for chrome
+    if (!descriptor && 'currentScript' in document && document.currentScript) {
+      return document.currentScript
+    }
+
+    // for other browsers with native support for currentScript
+    if (descriptor && descriptor.get !== getCurrentScript && document.currentScript) {
       return document.currentScript
     }
   
@@ -1706,12 +1713,12 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"7bb978d6-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/packages/elp-icon/index.vue?vue&type=template&id=122b1c87&scoped=true&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e97382d8-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/packages/elp-icon/index.vue?vue&type=template&id=4c3c37cc&scoped=true&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('svg',{class:'elp-icon-'+ _vm.name,style:(_vm.calcStyle)},[_c('use',{attrs:{"xlink:href":("#elp-icon-" + _vm.name)}})])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/packages/elp-icon/index.vue?vue&type=template&id=122b1c87&scoped=true&
+// CONCATENATED MODULE: ./src/packages/elp-icon/index.vue?vue&type=template&id=4c3c37cc&scoped=true&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/packages/elp-icon/index.vue?vue&type=script&lang=js&
 //
@@ -1867,7 +1874,7 @@ var component = normalizeComponent(
   staticRenderFns,
   false,
   null,
-  "122b1c87",
+  "4c3c37cc",
   null
   
 )
