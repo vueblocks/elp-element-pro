@@ -48,6 +48,7 @@ export default {
       const alias = ['operate', 'switch']
       const { type } = this.column.plugin || {}
       if (alias.includes(type)) return `elp-table-${type}`
+      return type
     }
   },
   methods: {

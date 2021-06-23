@@ -63,7 +63,6 @@
       :page-size="page.pageSize"
       :page-sizes="page.pageSizes"
       :pager-count="page.pageCount || 7"
-      @size-change="sizeChange"
       @current-change="currentChange"
       v-on="$listeners"
       class="elp-table-page"
@@ -135,9 +134,6 @@ export default {
     }
   },
   methods: {
-    sizeChange (val) {
-      this.$emit('size-change', val)
-    },
     currentChange (val) {
       this.$emit('input', val)
     },

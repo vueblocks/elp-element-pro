@@ -3,7 +3,10 @@ title: '更新日志'
 sidebarDepth: 0
 ---
 
-## v0.1.3
+## v0.1.5
+修复
++ elp-table `size-change` 多次触发
+## v0.1.4
 修复
 + elp-table 拓展列 hidden 隐藏失效
 ## v0.1.3
