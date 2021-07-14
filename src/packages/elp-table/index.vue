@@ -28,6 +28,11 @@
           :sortable="column.sortable"
           :show-overflow-tooltip="column.tooltip"
           :align="column.align"
+          :filters="column.filterList"
+          :column-key="column.columnKey"
+          :filter-placement="column.filterPlacement"
+          :filter-multiple="column.filterMultiple"
+          :filter-method="column.filterMethods"
         >
           <template v-if="column.thTooltip" slot="header">
             <span class="th-tooltip">{{ column.label }}</span>

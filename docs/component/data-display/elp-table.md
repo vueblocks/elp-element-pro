@@ -58,6 +58,11 @@ sidebarDepth: 0
 <<< @/docs/.vuepress/components/data-display/elp-table/switch.vue
 </code-card>
 
+#### 列搜索
+
+<code-card compName="docs-table-query">
+<<< @/docs/.vuepress/components/data-display/elp-table/query.vue
+</code-card>
 
 #### Attributes
 参数|说明|类型|可选值|默认值|
@@ -88,7 +93,12 @@ align|对齐方式|string|left/center/right
 edit|行内编辑|boolean|-|false|
 format|自定义表格内容|Function(row)|
 resizable|是否可拖拽|boolean|-|true
-plugin| 可自定义使用的插件，现在已默认安装几种插件|obj
+plugin|可自定义使用的插件，现在已默认安装几种插件|obj
+filterMultiple|列过滤的选项是否多选|boolean|-|true
+filterPlacement|过滤弹出框的定位|string|top/top-start/top-end/bottom/bottom-start/bottom-end/left/left-start/left-end/right/right-start/right-end|bottom
+filters|列过滤的选项，数组中的元素需要有text和value|Array|-|-
+filterMethods|数据过滤使用的方法，如果是多选的筛选项，对每一条数据会执行多次，任意一次返回 true 就会显示|Function(value, row, column)|-|-
+columnKey|column 的 key，如果需要使用filter-change事件，则需要此属性标识是哪个column的筛选条件|string|-|-
 
 ### plugin 说明
 参数|说明|类型|可选值|默认值
@@ -127,8 +137,7 @@ pageCount|页码按钮的数量，当总页数超过该值时会折叠|numer|大
 sizeChange|pageSize 改变时会触发|每页条数
 operateClick| operate插件点击触发 | eventName, row
 switchChange| switch插件切换触发 | value,row
-
-
+filterChange| 表格的筛选条件变化时触发 | filters
 
 ### ref
 名称|说明|
